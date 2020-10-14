@@ -1,6 +1,9 @@
 #ifndef InfluxArduino_hpp
 #define InfluxArduino_hpp
 
+#include <Arduino.h>
+#include <asyncHTTPrequest.h>
+
 class InfluxArduino
 {
 public:
@@ -64,6 +67,8 @@ private:
   bool _isAuthorised = false;
   bool _isSecure = false;
   int _latestResponse; //storing the latest response in case user wants to inspect
+  asyncHTTPrequest* request;
+  
 };
 
 #endif
